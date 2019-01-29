@@ -1,0 +1,28 @@
+{
+  "name": "fraexdesktop",
+  "version": "0.1.0",
+  "description": "Fraex Electron Desktop App",
+  "main": "index.js",
+  "dependencies": {
+    "electron": "^4.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebaskun98/FraexDesktop.git"
+  },
+  "keywords": [
+    "Cryptocurrency",
+    "fraex",
+    "desktop"
+  ],
+  "author": "sebaskun98",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/sebaskun98/FraexDesktop/issues"
+  },
+  "homepage": "https://github.com/sebaskun98/FraexDesktop#readme"
+}
