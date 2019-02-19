@@ -3,15 +3,24 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
-    <h1>TESTE</h1>
-    <form >
+
+    <div class="container">
+        <div class="row">
+            <button type="button" id="back" class="btn btn-outline-warning"><i class="fas fa-angle-left"></i>Go back</button>
+          </div>
+        <div class="row">
+            <div class="logo">
+              <img src="http://fraex.com/v4/images/icons/logo.png">
+            </div>
+          </div>
+    <form>
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
@@ -26,8 +35,8 @@
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
     </form>
-    <button type="button" id="s" class="btn btn-outline-danger btn-lg btn-index">Login2</button>
-    <p id="demo"></p>
+    <button type="button" id="submit" class="btn btn-outline-success btn-lg btn-index">Login</button>
+  </div>
     <script src="page2.js"></script>
 </body>
 </html>
