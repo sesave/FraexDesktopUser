@@ -16,30 +16,12 @@ s.addEventListener('click', function(event) {
         password: 'Iu79KRlJqt',
         database: 'sql10279512'
     });
-    // connect to mysql
-    conn.connect(function(err) {
-        // in case of error
-        if(err){
-            console.log(err.code);
-            console.log(err.fatal);
-        }
-        
-    });
-    $query = 'SELECT * FROM `user_tb_register` where res_st_email ='+x;
-    conn.query($query, function(err, rows, fields) {
-        if(err){
-            console.log("An error ocurred performing the query.");
-            console.log(err);
-            return;
-        }
-    
-        console.log("Query succesfully executed", rows);
-    });
-    
-    // Close the connection
-    conn.end(function(){
-        // The connection has been closed
-    });
+
+    conn.query('SELECT * FROM `user_tb_register` where res_st_email = '+mysql.escape(x), function (error, results, fields) {
+        if (error) throw error;
+        console.log(results);
+      });
+ 
 
 })
 
