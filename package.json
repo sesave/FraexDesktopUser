@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "bcrypt": "^3.0.4",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "node-php-password": "^0.1.2"
   }
 }

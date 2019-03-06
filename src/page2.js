@@ -1,29 +1,48 @@
-const electron = require('electron')
-var mysql = require('mysql')
-const path = require('path')
-const BrowserWindow = electron.remote.BrowserWindow
-const remote = require('electron').remote
-const s = document.getElementById('submit')
-const b = document.getElementById('back')
+const electron = require('electron');
+var mysql = require('mysql');
+const path = require('path');
+const BrowserWindow = electron.remote.BrowserWindow;
+const remote = require('electron').remote;
+const {dialog} = require('electron').remote;
+const s = document.getElementById('submit');
+const b = document.getElementById('back');
+const password = require('node-php-password');
+const conn = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: '',
+    database: "fraex"
+ });
+ conn.connect();
 
 s.addEventListener('click', function(event) {
+    var senha;
     var x = document.getElementById("email").value
     var z = document.getElementById("pass").value
     console.log(x,z);
-    var conn = mysql.createConnection({
-        host: 'sql10.freemysqlhosting.net',
-        user: 'sql10279512',
-        password: 'Iu79KRlJqt',
-        database: 'sql10279512'
-    });
+    const sql = conn.query("Select * from user_tb_register where res_st_email= "+conn.escape(x), function (error,results,fields){
+        if(error){
+            console.log(error);
+            conn.end();
+        }else{
+            console.log(results[0].res_st_email);
+            senha = results[0].res_st_passwrd;   
+            if(password.verify(z,senha)){
+                dialog.showMessageBox({message:'Login efetuado com sucesso',title: 'Login',type:'info'},() =>{
 
-    conn.query('SELECT * FROM `user_tb_register` where res_st_email = '+mysql.escape(x), function (error, results, fields) {
-        if (error) throw error;
-        console.log(results);
-      });
- 
+                });
+            }else{
+                dialog.showMessageBox({message:'As senhas não coincidem, tente novamente',title: 'Login',type:'error'},() =>{
 
+                });
+                location.reload();
+            }
+        }
+        conn.end();
+     });
 })
+
+
 
 b.addEventListener('click', function(event) {
     var window = remote.getCurrentWindow();

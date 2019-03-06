@@ -27,7 +27,7 @@
     -ms-flex-pack : center;
 }
 html,body{
-    background-image: url(http://fraex.com/v4/images/bg01.jpg);
+    background-image: url('https://raw.githubusercontent.com/sebaskun98/fraexweb/master/images/bg01.jpg?token=AbGmtI0exOd4ULcYYobh5FfVZiXedgLbks5cgCNpwA%3D%3D');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
