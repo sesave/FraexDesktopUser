@@ -33,9 +33,9 @@ const conn = mysql.createConnection({
                 });
             }else{
                 dialog.showMessageBox({message:'As senhas não coincidem, tente novamente',title: 'Login',type:'error'},() =>{
-
+                    location.reload();
                 });
-                history.back();
+                
             }
         }
         conn.end();

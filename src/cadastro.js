@@ -22,12 +22,25 @@ const conn = mysql.createConnection({
     let userValue = document.getElementById("username").value;
     let idValue = document.getElementById("userid").value;
     let nameValue = document.getElementById("name").value;
-
+    let dateValue = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+    let ableValue = 1;
     if(passValue === cpassValue ){
-
+        passValue = phpPass.hash(passValue);
+        let insertValues = [userValue,passValue,nameValue,emailValue,idValue,dateValue];
+        
+        var sql = "INSERT INTO `user_tb_register`(res_st_username,res_st_passwrd,res_st_name,res_st_email,res_st_userid,res_dt_date,res_in_able) VALUES ("+mysql.escape(userValue)+","+mysql.escape(passValue)+","+mysql.escape(nameValue)+","+mysql.escape(emailValue)+","+mysql.escape(idValue)+","+mysql.escape(dateValue)+","+mysql.escape(ableValue)+")";
+        
+        //var value2 = [userValue,passValue,nameValue,emailValue,idValue,dateValue]
+        conn.query(sql,function (err, result) {
+        if (err) throw err;
+        console.log("1 record inserted");
+        dialog.showMessageBox({message:'Cadastro feito com sucesso',title: 'Cadastro',type:'info'},() =>{
+            
+        });
+  });
     }else{
-        dialog.showMessageBox({message:'As senhas não coincidem, tente novamente',title: 'Cadastrp',type:'error'},() =>{
-
+        dialog.showMessageBox({message:'As senhas não coincidem, tente novamente',title: 'Cadastro',type:'error'},() =>{
+            history.back();
         });
     }
 

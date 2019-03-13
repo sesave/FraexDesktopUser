@@ -2,7 +2,7 @@ const electron = require('electron')
 const path = require('path')
 const BrowserWindow = electron.remote.BrowserWindow
 const remote = require('electron').remote;
-
+const mysql = require('mysql');
 
 const loginBtn = document.getElementById('btn-login')
 const loginFraex = document.getElementById('btn-fraex')
