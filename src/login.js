@@ -29,7 +29,15 @@ const conn = mysql.createConnection({
             senha = results[0].res_st_passwrd;   
             if(password.verify(passValue,senha)){
                 dialog.showMessageBox({message:'Login efetuado com sucesso',title: 'Login',type:'info'},() =>{
-
+                    var window = remote.getCurrentWindow();
+                    const modalPath = path.join('file://',__dirname, 'indexprofile.html')
+                    let win = new BrowserWindow({width: 1024, height: 720})
+                    win.on('close', function() {win=null})
+                    win.loadURL(modalPath)
+                    window.close();
+                    win.once('ready-to-show', () => {   
+                        win.show()
+                    })  
                 });
             }else{
                 dialog.showMessageBox({message:'As senhas não coincidem, tente novamente',title: 'Login',type:'error'},() =>{
