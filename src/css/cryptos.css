@@ -1,10 +1,72 @@
+
 h1
 {
 	color:#fff;
-	margin:40px 0 60px 0;
+	margin:0 auto;
 	font-weight:300;
 	background: rgba(0,0,0,0.6);
-	margin: 0 auto;
+	position: relative;
+	text-align: center;
+}
+#btcPrice{
+	color: #323233 !important;
+	background: none !important;
+	margin: 0;
+    position: absolute;
+    top: 1500%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+#ltcPrice{
+	color: #323233 !important;
+	background: none !important;
+	margin: 0;
+    position: absolute;
+    top: 1500%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+#adaPrice{
+	color: #323233 !important;
+	background: none !important;
+	margin: 0;
+    position: absolute;
+    top: 1500%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+#ethPrice{
+	color: #323233 !important;
+	background: none !important;
+	margin: 0;
+    position: absolute;
+    top: 1500%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+#dashPrice{
+	color: #323233 !important;
+	background: none !important;
+	margin: 0;
+    position: absolute;
+    top: 1500%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+#xmrPrice{
+	color: #323233 !important;
+	background: none !important;
+	margin: 0;
+    position: absolute;
+    top: 1500%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
 }
 .cryptos{
 	margin-top: 5%;
@@ -24,6 +86,7 @@ h1
 	position:relative;
 	transition:0.5s;
 	margin-bottom:28px;
+	opacity: 0.7;
 }
 
 
@@ -55,7 +118,6 @@ h1
 	padding:5px 15px 0 15px;
 	text-align:left;
 	background:#fff;
-	
 }
 
 .team-front
