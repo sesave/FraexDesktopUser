@@ -23,7 +23,7 @@ loginBtn.addEventListener('click', function(event) {
 
 loginFraex.addEventListener('click', function(event) {
     var window = remote.getCurrentWindow();
-    const modalPath = path.join('http://fraex.com/v4/')
+    const modalPath = path.join('fraex.000webhostapp.com/git')
     let win = new BrowserWindow({width: 1024, height: 720})
     win.on('close', function() {win=null})
     win.loadURL(modalPath)
