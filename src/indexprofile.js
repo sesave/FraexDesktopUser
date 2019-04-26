@@ -6,6 +6,7 @@ const remote = require('electron').remote;
 const cryptoBtn = document.getElementById('btn-crypto')
 const graphBtn = document.getElementById('btn-graph')
 const outBtn = document.getElementById('btn-signout')
+const graph2Btn = document.getElementById('btn-graph2')
 
 cryptoBtn.addEventListener('click', function(event) {
     var window = remote.getCurrentWindow();
@@ -22,6 +23,18 @@ cryptoBtn.addEventListener('click', function(event) {
 graphBtn.addEventListener('click', function(event) {
     var window = remote.getCurrentWindow();
     const modalPath = path.join('file://',__dirname, 'graficos.html')
+    let win = new BrowserWindow({width: 1024, height: 720})
+    win.on('close', function() {win=null})
+    win.loadURL(modalPath)
+    window.close();
+    win.once('ready-to-show', () => {   
+        win.show()
+    })  
+})
+
+graph2Btn.addEventListener('click', function(event) {
+    var window = remote.getCurrentWindow();
+    const modalPath = path.join('file://',__dirname, 'graficos2.html')
     let win = new BrowserWindow({width: 1024, height: 720})
     win.on('close', function() {win=null})
     win.loadURL(modalPath)
