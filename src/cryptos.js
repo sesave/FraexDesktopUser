@@ -12,12 +12,12 @@ var dashPrice = document.getElementById('dashPrice');
 var xmrPrice = document.getElementById('xmrPrice');
 
 
-setInterval(function(){ getBTC(); }, 1000);
-setInterval(function(){ getLTC(); }, 1000);
-setInterval(function(){ getADA(); }, 1000);
-setInterval(function(){ getETH(); }, 1000);
-setInterval(function(){ getDASH(); }, 1000);
-setInterval(function(){ getXMR(); }, 1000);
+setTimeout(function(){ getBTC(); }, 1000);
+setTimeout(function(){ getLTC(); }, 1000);
+setTimeout(function(){ getADA(); }, 1000);
+setTimeout(function(){ getETH(); }, 1000);
+setTimeout(function(){ getDASH(); }, 1000);
+setTimeout(function(){ getXMR(); }, 1000);
 
 back.addEventListener('click', function(event) {
     var window = remote.getCurrentWindow();

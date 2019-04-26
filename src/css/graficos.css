@@ -69,7 +69,8 @@ h1
     transform: translate(-50%, -50%)
 }
 .cryptos{
-	margin-top: 5%;
+    margin-top: 5%;
+    height: 200%;
 }
 .cryptos2{
 	margin-top: 2%;
@@ -77,7 +78,7 @@ h1
 .our-team-main
 {
 	width:100%;
-	height:auto;
+	height:200%;
 	border-bottom:5px #323233 solid;
 	background:#fff;
 	text-align:center;
@@ -86,7 +87,7 @@ h1
 	position:relative;
 	transition:0.5s;
 	margin-bottom:28px;
-	opacity: 0.7;
+	opacity: 0.9;
 }
 
 
@@ -111,7 +112,7 @@ h1
 .team-back
 {
 	width:100%;
-	height:auto;
+	height:200%;
 	position:absolute;
 	top:0;
 	left:0;
@@ -123,18 +124,27 @@ h1
 .team-front
 {
 	width:100%;
-	height:auto;
-	position:relative;
+    height:200%;
+    position:static;
 	z-index:10;
 	background:#fff;
 	padding:15px;
-	bottom:0px;
+    bottom:0px;
 	transition: all 0.5s ease;
+}
+
+.speedometerTitle-30PXfiU1- {
+    text-align: center !important;
+    display:none;
+}
+html.theme-dark .speedometerTitle-30PXfiU1- {
+    text-align: center !important;
+    display:none;
 }
 
 .our-team-main:hover .team-front
 {
-	bottom:-200px;
+	bottom:-150px;
 	transition: all 0.5s ease;
 }
 
@@ -145,8 +155,4 @@ h1
 }
 
 /*our-team-main*/
-
-.col{
-	padding-left: 0px!important;
-}
 

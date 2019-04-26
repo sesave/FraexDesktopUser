@@ -21,7 +21,7 @@ cryptoBtn.addEventListener('click', function(event) {
 
 graphBtn.addEventListener('click', function(event) {
     var window = remote.getCurrentWindow();
-    const modalPath = path.join('#')
+    const modalPath = path.join('file://',__dirname, 'graficos.html')
     let win = new BrowserWindow({width: 1024, height: 720})
     win.on('close', function() {win=null})
     win.loadURL(modalPath)
