@@ -32,11 +32,22 @@ const conn = mysql.createConnection({
         
         //var value2 = [userValue,passValue,nameValue,emailValue,idValue,dateValue]
         conn.query(sql,function (err, result) {
-        if (err) throw err;
-        console.log("1 record inserted");
+        if (err){
+            alert('Servidor mysql não iniciado. Por favor inicie o servidor MySQL antes de fazer o cadastro');
+        }else{
+            console.log("1 record inserted");
         dialog.showMessageBox({message:'Cadastro feito com sucesso',title: 'Cadastro',type:'info'},() =>{
-            
+            var window = remote.getCurrentWindow();
+                    const modalPath = path.join('file://',__dirname, 'login.html')
+                    let win = new BrowserWindow({width: 1024, height: 720})
+                    win.on('close', function() {win=null})
+                    win.loadURL(modalPath)
+                    window.close();
+                    win.once('ready-to-show', () => {   
+                        win.show()
+                    }) 
         });
+        }
   });
     }else{
         dialog.showMessageBox({message:'As senhas não coincidem, tente novamente',title: 'Cadastro',type:'error'},() =>{

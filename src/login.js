@@ -24,6 +24,7 @@ const conn = mysql.createConnection({
         if(error){
             console.log(error);
             conn.end();
+            alert('Servidor mysql não iniciado. Por favor inicie o servidor MySQL antes de fazer o login.');
         }else{
             console.log(results[0].res_st_email);
             senha = results[0].res_st_passwrd;   

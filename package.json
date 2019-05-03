@@ -4,7 +4,9 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package-win": "electron-packager . FraexDesktop --overwrite --asar=true --platform=win32 --arch=ia32",
+    "package-linux": "electron-packager . FraexDesktop --overwrite --asar --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png"
   },
   "repository": "https://github.com/sebaskun98/FraexDesktop",
   "keywords": [
@@ -19,6 +21,7 @@
   "devDependencies": {
     "electron": "^4.0.2",
     "electron-builder": "^20.38.5",
+    "electron-packager": "^13.1.1",
     "electron-rebuild": "^1.8.4"
   },
   "dependencies": {
